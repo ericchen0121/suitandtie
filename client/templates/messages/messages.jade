@@ -10,6 +10,11 @@ template(name='messageContainer')
       div(class='panel-heading') MESSAGES
       div(class='messages panel-body')
         div(class='row')
+        each messages
+          div(class='header')
+            span(class='userName') #{ userId }
+            div(class='commentary') #{ message }
+        div(class='row')
           div(class='col-lg-1 plusNoPadding')
             span(class="input-group-btn ")
               button(class="btn btn-default" type="button") +

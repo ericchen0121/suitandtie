@@ -1,17 +1,11 @@
-Template.messageContainer.events({ 
-	'submit form': function(e) {
-    e.preventDefault();
+Template.messageContainer.events({
 
-		var commentaryAttr = {
-			commentary: $(e.target).find('[id=msg]').val()
-		};
-
-		Meteor.call('commentaryInsert', commentaryAttr, function (error, result) {
-			if(error){
-				return alert(error.reason)
-			}
-		})
-
-  //   Router.go('postPage', post);
+	'click input[type=submit]': function(e) {
+    var message = $('#msg').val();
+    Messages.insert({
+    	message, 
+    	createdAt: new Date(), // current time
+    	userId: Meteor.userId()
+    })
   }
-});
+})
