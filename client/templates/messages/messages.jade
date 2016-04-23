@@ -10,8 +10,12 @@ template(name='messageContainer')
       div(class='panel-heading') MESSAGES
       div(class='messages panel-body')
         div(class='row')
-          div(class='col-lg-10')
-            div(class="input-group")
-              span(class="input-group-btn")
-                button(class="btn btn-default" type="button") +
-              input(type="text" class="form-control")
+          div(class='col-lg-1 plusNoPadding')
+            span(class="input-group-btn ")
+              button(class="btn btn-default" type="button") +
+          div(class='col-lg-8 noPadding')
+            span
+              input(id='msg' type="msg" class="form-control")
+          div(class='col-lg-1 noPadding')
+            span
+              input(id='submit' type='submit' value='submit' class='btn btn-primary')
